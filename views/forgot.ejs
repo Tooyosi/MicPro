@@ -1,0 +1,19 @@
+<% include ./partials/header.ejs%>
+<div class="row">
+     <div class="col-lg-8 col-md-8 col-sm-6 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 seal">
+         <div class="col-lg-4 col-md-4 col-sm-8 col-lg-offset-4 col-md-offset-4 col-sm-offset-2 slide">    
+            <form class="form-vertical" action="/forgot"  method="POST">
+                <div class="form-group"> 
+                  <label class="control-label " for="title">Email :</label>
+                    <input class="form-control" autofocus type="email"  id="email" name="email">
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-success btn-sm btn-edit" type="submit">Submit</button>                                    
+                    <a class="btn btn-danger btn-sm btn-edit" href="/login">Back</a>                                                                            
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer.ejs%>

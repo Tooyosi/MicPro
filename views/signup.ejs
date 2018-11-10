@@ -1,0 +1,89 @@
+<% include partials/header.ejs %>
+  <div class="row signup">
+    <div class="col-lg-4 col-md-4 col-sm-4  col-xs-10">
+      <img src="../images/Oyo-State-emblem.png" class="img-responsive img-rounded" alt="Oyo state Emblem">
+    </div>
+    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-1 ">
+        <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="/register">
+          <div class="form-head">
+              <h3>Staff Sign-Up</h3>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="Firstname">First Name:</label>
+              <input type="text" class="form-control" id="firstname" placeholder="Enter Your First Name" name="firstname" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+              <label class="control-label" for="Lastname">Last Name:</label>
+                <input type="text" class="form-control" id="Lastname" placeholder="Enter Your Last Name" name="lastname" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="Username">Username:</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter Your Username" name="username" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+              <label class="control-label" for="Phone no">Phone no:</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Enter Your Phone number" name="phone" required>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+              <label class="control-label" for="Photo">Choose Profile <Picture></Picture>:</label>
+                <input type="file" class="form-control" id="Picture" accept="image/*" name="picture" required>
+            </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+              <label class="control-label" for="gender">Gender:</label>
+              <select class="form-control" name="gender" id="gender" required>
+                <option selected disabled>Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="state">State:</label>
+            <select class="form-control" name="state" id="sel1" required>
+              <option selected disabled>Select your State</option>
+              <%state.forEach(function(foundState){%>
+              <option value="<% foundState.state.name%>" id="state"><%= foundState.state.name%></option>
+              <%})%>              
+          </select>
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+          <label class="control-label" for="Username">LGA:</label>
+            <input type="text" class="form-control" id="lga" placeholder="Enter Your Local Govt Area" name="lga" required>
+        </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="age">Age:</label>
+              <input type="number" class="form-control" id="age" step="1" min="1" placeholder="Enter Your Age" name="age" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="level">Level:</label>
+              <input type="number" class="form-control" id="level" step="1" min="1" placeholder="Enter Your Level" name="level" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+              <label class="control-label" for="pwd">Confirm Password:</label>
+                <input type="password" class="form-control" id="cpwd" placeholder="Confirm password" name="" required>
+            </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+              <label class="control-label" for="pwd">Admin Code:</label>
+                <input type="password" class="form-control" id="adminCode" placeholder="Enter secret code" name="adminCode">
+            </div>
+          <!-- <div class="form-group"> -->
+            <div>
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+            <div class="text-center">
+                <a href="/login">Have an account? Login</a>
+            </div>
+          </div>
+      </form> 
+    </div>    
+  </div>
+            
+
+<% include partials/footer.ejs %>

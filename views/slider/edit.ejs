@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs%>
+<div class="row">
+     <div class="col-lg-8 col-md-8 col-sm-6 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 seal">
+        <div class="text-center">
+            <h2>Edit Slide</h2>
+        </div> 
+        <div class="col-lg-4 col-md-4 col-sm-8 col-lg-offset-4 col-md-offset-4 col-sm-offset-2 slide">    
+            <form class="form-vertical" action="/slider/<%= slide._id%>?_method=PUT" enctype="multipart/form-data"  method="POST">
+                <div class="form-group"> 
+                  <label class="control-label " for="title">Slide Title :</label>
+                    <input type="text" class="form-control" id="slide_title" value="<%= slide.title%>" name="title" required>
+                </div>
+                <div class="form-group"> 
+                  <label class="control-label " for="text">Slide text :</label>
+                    <input type="text" class="form-control" id="slide_text" value="<%= slide.description%>" name="description" required>
+                </div>
+                <div class="form-group"> 
+                  <label class="control-label " for="title">Slide Image :</label>
+                    <input type="file"  accept="image/*" id="slide_imge" name="picture" required>
+                    <input class="cloudinary-input" type="text"  value="<%= slide.image_id%>" name="image">
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-success btn-sm btn-edit" type="submit">Submit</button>                                    
+                    <a class="btn btn-warning btn-sm btn-edit" href="/slider/<%= slide._id %>">Cancel</a>                                                                            
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>

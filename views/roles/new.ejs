@@ -1,0 +1,65 @@
+<% include ../partials/header.ejs%>
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-lg-3 col-md-3 col-sm-5 profileDiv">
+            <div class="text-center profilePicDiv">
+                <img src="<%= user.displayPic.image%>" class="img-thumbnail img-responsive profilePic" alt="<%=user.firstname%>'s picture" width="125" height="60">            
+            </div>
+            <div class="profileBodyDiv">
+                <table class="row table">
+                    <thead><th>Bio-Data</th></thead>
+                    <tr>
+                        <td>Name : </td>
+                        <td><%= user.firstname%> <%= user.lastname%></td>
+                    </tr>
+                    <tr>
+                        <td>Gender: </td>
+                        <td><%= user.gender%></td>
+                    </tr>
+                    <tr>
+                        <td>Age: </td>
+                        <td><%= user.age%> yrs</td>
+                    </tr>
+                    <tr>
+                        <td>State: </td>
+                        <td><%= user.state%></td>
+                    </tr>
+                    <tr>
+                        <td>LGA: </td>
+                        <td><%= user.lga%></td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td><%= user.address%></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><%= user.email%></td>
+                    </tr>
+                    <tr>
+                </table>
+                <div class="text-center">
+                    <a class="btn btn-success btn-sm btn-edit" href="/user/<%= user._id%>/edit">Edit profile</a>                                    
+                </div>
+            </div>
+        </div>
+         <div class="col-lg-8 col-md-8 col-sm-6 contentDiv profileDiv">  
+            <h2><%= user.firstname %> <%= user.lastname%> / <span class="level">Level: <%= user.level%></span></h2>
+            <hr>
+            <div>
+                <h3>Add <%= user.firstname %>'s Roles</h3>
+                <form class="form-inline" action="/user/<%=user._id%>/roles"  method="POST">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                        <input type="text" class="form-control" id="name" placeholder="Enter Role" name="role[text]" required>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-success btn-sm qualBtns" type="submit">Submit</button>                                    
+                        <a class="btn btn-danger btn-sm qualBtns" href="/user/<%=user._id%>">Cancel</a>                                    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>

@@ -1,0 +1,146 @@
+<% include ../partials/header.ejs%>
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-lg-3 col-md-3 col-sm-5 profileDiv">
+            <div class="text-center profilePicDiv">
+                <img src="<%= user.displayPic.image %>" class="img-thumbnail img-responsive profilePic" alt="<%=user.firstname%>'s picture" width="125" height="60">         
+            </div>
+            <div class="profileBodyDiv">
+                <table class="row table">
+                    <th>Bio-Data</th>
+                    <tr>
+                        <td>Name : </td>
+                        <td><%= user.firstname%> <%= user.lastname%></td>
+                    </tr>
+                    <tr>
+                        <td>Gender: </td>
+                        <td><%= user.gender%></td>
+                    </tr>
+                    <tr>
+                        <td>Age: </td>
+                        <td><%= user.age%> yrs</td>
+                    </tr>
+                    <tr>
+                        <td>State: </td>
+                        <td><%= user.state%></td>
+                    </tr>
+                    <tr>
+                        <td>LGA: </td>
+                        <td><%= user.lga%></td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td><%= user.address%></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><%= user.email%></td>
+                    </tr>
+                    <tr>
+                        <td>Phone No: </td>
+                        <td><%= user.phone%></td>
+                    </tr>
+                </table>
+                <% if (currentUser && currentUser.isAdmin){%>            
+                    <div class="text-center">
+                        <a class="btn btn-primary btn-sm btn-edit" href="/slider">Manage Slides</a>                                    
+                        <a class="btn btn-primary btn-sm btn-edit" href="/slider/new">Add new Slide</a>                                    
+                    </div>
+                <%}%>
+                
+                <% if (currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){%>            
+                    <div class="text-center">
+                        <a class="btn btn-success btn-sm btn-edit" href="/user/<%= user._id%>/edit">Edit profile</a>                                    
+                    </div>
+                <%}%>
+            </div>
+        </div>
+         <div class="col-lg-8 col-md-8 col-sm-6 contentDiv profileDiv">
+            <h2><%= user.firstname %> <%= user.lastname%> / <span class="level">Level: <%= user.level%></span></h2>
+            <hr>
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h3>Education and Qualifications</h3>
+                        <% user.qualifications.forEach(function(qualification){%>
+                            <table class="table table-hover table-condensed ">
+                                <tr>
+                                    <th>Degree Name: </th>
+                                    <td><em><%= qualification.name%></em></td>
+                                </tr>
+                                <tr>
+                                    <th>Degree Type: </th>
+                                    <td><em><%= qualification.qualification %></em></td>
+                                </tr>
+                                <tr>
+                                    <th>Institution: </th>
+                                    <td><em><%= qualification.institution %></em></td>
+                                </tr>
+                                <tr>
+                                    <th>Year: </th>
+                                    <td><em><%= qualification.year %></em></td>
+                                </tr>
+                            </table>
+                            <% if (currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){%>
+                            <form class="form-inline" action="/user/<%= user._id%>/qualification/<%= qualification._id %>?_method=DELETE" method="POST">
+                                <a class="btn btn-warning  btn-sm " href="/user/<%= user._id%>/qualification/<%= qualification._id %>/edit">Edit</a>                                                                                                                            
+                                <button class="btn btn-danger  btn-sm ">Delete</button>                                                                                                                            
+                            <hr>
+                            </form>
+                            <%}%>
+                        <%})%>
+                        <% if (currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){%>            
+                            <a class="btn btn-success btn-sm" href="/user/<%= user._id%>/qualification/new">Add new</a>                                                        
+                        <%}%>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <h3>Roles and Responsibilities</h3>
+                            <table class="table table-hover table-condensed ">
+                                <% user.roles.forEach(function(role){%>
+                                    <tr>
+                                        <td><%= role.text%></td>
+                                    <% if (currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){%>            
+                                        <td>
+                                            <form class="form-inline pull-right" action="/user/<%= user._id%>/roles/<%= role._id %>?_method=DELETE" method="POST">
+                                                <a class="btn btn-warning btn-sm" href="/user/<%= user._id%>/roles/<%= role._id %>/edit">Edit</a>                                                                                                                            
+                                                <button class="btn btn-danger btn-sm">Delete</button>                                                                                                                            
+                                            </form>
+                                        </td>
+                                    <%}%>
+                                    </tr>
+                                    <%})%>
+                            </table>
+                        <% if (currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){%>            
+                            <a class="btn btn-success btn-sm" href="/user/<%= user._id%>/roles/new">Add new</a>                                                                    
+                        <%}%>
+                        </div>
+                     <% if (currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){%>                     
+                     <div class="col-lg-6 col-md-6 col-sm-6">
+                            <h3>Weekly Activities</h3>
+                            <table class="table table-hover table-condensed ">
+                                <% user.activities.forEach(function(activity){%>
+                                    <tr>
+                                        <td><%= activity.text%></td>
+                                        <%if (currentUser.isAdmin){%>
+                                        <td>
+                                            <form class="form-inline pull-right" action="/user/<%= user._id%>/activity/<%= activity._id %>?_method=DELETE" method="POST">
+                                                <a class="btn btn-warning btn-sm " href="/user/<%= user._id%>/activity/<%= activity._id %>/edit">Edit</a>                                                                                                                            
+                                                <button class="btn btn-danger btn-sm">Delete</button>                                                                                                                            
+                                            </form>
+                                        </td>
+                                        <%}%>
+                                    </tr>
+                                <%})%>
+                            </table>
+                        <%if (currentUser.isAdmin){%>
+                            <a class="btn btn-success btn-sm btn-edit" href="/user/<%= user._id%>/activity/new">Add new</a>                                                                    
+                            <%}%>
+                        </div>
+                    <%}%>        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>

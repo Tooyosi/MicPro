@@ -1,0 +1,17 @@
+<% include ../partials/header.ejs%>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-top: 70px;">  
+        <%for(i = 0; i < slide.length; i++){%>
+            <h4>Slide <%= i+1 %></h4>
+            <img class=" img-responsive  img-rounded" src="<%=slide[i].image%>">
+            <div class="text-center">
+                <h3><%=slide[i].title%></h3>                    
+                <p><%=slide[i].description%></p> 
+                <a class="btn btn-primary btn-sm btn-edit" href="/slider/<%= slide[i]._id%>">Manage</a>                                                                            
+            </div>                                       
+        <%}%>
+        <a class="pull-right btn btn-success" href="/user/<%=currentUser._id%>">Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>

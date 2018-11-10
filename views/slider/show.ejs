@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs%>
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 seal">
+     <div>
+         <div class="thumbnail">
+            <img class="img-responsive" width="370px;" src="<%= slide.image%>" alt="">
+            <div class="caption-full">            
+                <h3><%= slide.title%></h3>
+                <p><%= slide.description%></p>
+                <form action="/slider/<%= slide._id%>?_method=DELETE" enctype="multipart/form-data" method="POST">
+                    <input class="cloudinary-input"  value="<%=slide.image_id%>" name="image">
+                    <a class="btn btn-warning" href="/slider/<%= slide._id%>/edit">Edit</a>
+                    <button class="btn btn-danger">Delete</button>
+
+                    <a class="pull-right" href="/slider/">Go Back</a>                                                                            
+                </form>
+            </div>
+         </div>
+    </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>
