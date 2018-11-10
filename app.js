@@ -74,6 +74,6 @@ app.use(activityRoutes);
 app.use(sliderRoutes);
 app.use(staffRoutes);
 
-app.listen(3000, '127.0.0.1', function(){
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Mic Pro app is running");
 })
