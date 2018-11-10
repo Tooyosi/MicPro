@@ -40,7 +40,8 @@ cloudinary.config({
     api_secret: '3IUdO7UHHhC6S-4the2cBlDRKzg'
 });
 
-mongoose.connect("mongodb://localhost:27017/mic_pro");
+var url = "mongodb://OYSGMIC:OYSGMIC1@ds030817.mlab.com:30817/mic_pro" || "mongodb://localhost:27017/mic_pro"
+mongoose.connect(url);
 
 
 app.use(require("express-session")({
