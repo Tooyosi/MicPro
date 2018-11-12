@@ -247,6 +247,10 @@ body{
     border-bottom: 2px solid #bdcabd;
 
 }
+/* validation */
+.validationError{
+    color: red;
+}
 
 /* profile */
 .profileDiv{

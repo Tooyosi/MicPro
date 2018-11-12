@@ -16,7 +16,8 @@ var express                 = require("express"),
     multipart               = require('connect-multiparty'),
     multipartMiddleware     = multipart();
     app                     = express();
-
+   
+    require('dotenv').config();
 // Require Routes
 var indexRoutes                 = require("./routes/index"),
     qualificationRoutes         = require("./routes/qualification"),
@@ -37,10 +38,12 @@ app.use(flash());
 cloudinary.config({
     cloud_name: 'diooad2vb',
     api_key: '435625583486969',
-    api_secret: '3IUdO7UHHhC6S-4the2cBlDRKzg'
+    api_secret: process.env.API_SECRET
 });
 
-var url = "mongodb://OYSGMIC:OYSGMIC1@ds030817.mlab.com:30817/mic_pro" || "mongodb://localhost:27017/mic_pro"
+// "mongodb://OYSGMIC:OYSGMIC1@ds030817.mlab.com:30817/mic_pro"
+
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/mic_pro";
 mongoose.connect(url);
 
 
@@ -75,5 +78,5 @@ app.use(sliderRoutes);
 app.use(staffRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Mic Pro app is running");
+    console.log("Mic Pro app is running on port "+ process.env.PORT);
 })

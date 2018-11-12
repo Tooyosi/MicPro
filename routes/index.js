@@ -64,6 +64,8 @@ router.post("/register", multipartMiddleware ,function(req, res){
         },
         age: req.body.age,
         gender: req.body.gender,
+        state: req.body.state,
+        lga: req.body.lga,
         phone: req.body.phone,
         level: req.body.level,
         email: req.body.email

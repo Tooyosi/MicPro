@@ -9,6 +9,8 @@ var UserSchema = new mongoose.Schema({
     lastname: String,
     age: String,
     phone: String,
+    state: String,
+    lga: String,
     gender: String,
     level: String,
     email: {type: String, unique: true, required: true},

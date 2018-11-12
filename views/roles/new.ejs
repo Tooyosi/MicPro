@@ -50,10 +50,11 @@
                 <h3>Add <%= user.firstname %>'s Roles</h3>
                 <form class="form-inline" action="/user/<%=user._id%>/roles"  method="POST">
                     <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                        <input type="text" class="form-control" id="name" placeholder="Enter Role" name="role[text]" required>
+                        <input type="text" class="form-control" id="role" placeholder="Enter Role" name="role[text]" required>
+                        <p class="roleErr validationError"></p>
                     </div>
                     <div class="text-right">
-                        <button class="btn btn-success btn-sm qualBtns" type="submit">Submit</button>                                    
+                        <button class="btn btn-success btn-sm qualBtns roleBtn" type="submit">Submit</button>                                    
                         <a class="btn btn-danger btn-sm qualBtns" href="/user/<%=user._id%>">Cancel</a>                                    
                     </div>
                 </form>

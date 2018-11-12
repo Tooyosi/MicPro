@@ -50,22 +50,26 @@
             <form class="form-vertical" action="/user/<%=user._id%>/qualification"  method="POST">
                 <div class="form-group col-lg-4 col-md-4 col-sm-4"> 
                   <label class="control-label " for="firstname">Name :</label>
-                    <input type="text" class="form-control" id="name" placeholder="Qualification" name="qualification[name]" required>
+                    <input type="text" class="form-control degreeName"  placeholder="Degree Name"  name="qualification[name]" required>
+                    <span class="nameErr validationError"></span>
                 </div>
                 <div class="form-group col-lg-4 col-md-4 col-sm-4"> 
                   <label class="control-label " for="firstname">Type :</label>
-                    <input type="text" class="form-control" placeholder="Type of Qualification" name="qualification[qualification]" required>
+                    <input type="text" class="form-control degreeTitle" placeholder="Degree Title"  name="qualification[qualification]" required>
+                    <span class="titleErr validationError"></span>
                 </div>
                 <div class="form-group col-lg-4 col-md-4 col-sm-4"> 
                   <label class="control-label " for="firstname">Institution :</label>
-                    <input type="text" class="form-control" placeholder="Institution Awarded" name="qualification[institution]" required>
+                    <input type="text" class="form-control degreeInst" placeholder="Institution Awarded"  name="qualification[institution]" required>
+                    <span class="instErr validationError"></span>
                 </div>
                 <div class="form-group col-lg-4 col-md-4 col-sm-4"> 
                   <label class="control-label " for="firstname">Year :</label>
-                    <input type="number" class="form-control" placeholder="Year Attained" name="qualification[year]" required>
+                    <input type="number" class="form-control degreeYear" placeholder="Year Attained" name="qualification[year]" required>
+                    <span class="yearErr validationError"></span>
                 </div>
                 <div class="text-right">
-                    <button class="btn btn-success btn-sm qualBtns" type="submit">Submit</button>                                    
+                    <button class="btn btn-success btn-sm qualBtns degreeBtn" type="submit">Submit</button>                                    
                     <a class="btn btn-danger btn-sm qualBtns" href="/user/<%=user._id%>">Cancel</a>                                    
                 </div>
             </form>
