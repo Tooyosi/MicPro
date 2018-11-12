@@ -38,7 +38,7 @@ app.use(flash());
 cloudinary.config({
     cloud_name: 'diooad2vb',
     api_key: '435625583486969',
-    api_secret: process.env.API_SECRET
+    api_secret: "3IUdO7UHHhC6S-4the2cBlDRKzg"
 });
 
 // "mongodb://OYSGMIC:OYSGMIC1@ds030817.mlab.com:30817/mic_pro"
