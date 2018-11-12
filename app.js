@@ -78,5 +78,5 @@ app.use(sliderRoutes);
 app.use(staffRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Mic Pro app is running on port "+ process.env.PORT);
+    console.log("Mic Pro app is running");
 })
