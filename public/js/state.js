@@ -251,7 +251,6 @@ else{
   var lga = document.querySelector('select[name="lga"]'); 
 //       if theres a selected value for states
   if(event.target.value){
-        alert(event.target.value) 
         // save the selected state index Local government array in a variable
         var lgaArray = data[state.selectedIndex - 1].state.lga
             //loop through the local government array

@@ -3,7 +3,7 @@
  <div class="slide-body">      
         <ul class="slideshow">
     <%slides.forEach(function(slide){%>
-          <li style="background-image: url(<%= slide.image%>)">
+          <li class="cloudSlide" style="background: url(<%= slide.image%>) no-repeat center/100%">
               <div id="slide-header">
                 <h1><%= slide.title%></h1>
                 <p><%= slide.description%></p>

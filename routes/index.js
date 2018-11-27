@@ -13,6 +13,7 @@ var Slider = require("../models/slider.js");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
+require('dotenv').config();
 
 // Index route
 router.get("/", function(req, res){
@@ -125,7 +126,7 @@ router.post("/forgot", function(req, res){
                 service: "Gmail",
                 auth: {
                     user: "tuc0476@gmail.com",
-                    pass: "Conjugate1"
+                    pass: process.env.EMAIL_PASSWORD
                 }
             });
             var mailOptions = {
@@ -204,7 +205,7 @@ router.post("/reset/:token", function(req, res){
                 service: "Gmail",
                 auth: {
                     user: "tuc0476@gmail.com",
-                    pass: "Conjugate1"
+                    pass: process.env.EMAIL_PASSWORD
                 }
             })
             var mailOptions = {
