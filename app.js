@@ -17,7 +17,7 @@ var express                 = require("express"),
     multipartMiddleware     = multipart();
     app                     = express();
    
-    require('dotenv').config();
+    // require('dotenv').config();
 // Require Routes
 var indexRoutes                 = require("./routes/index"),
     qualificationRoutes         = require("./routes/qualification"),

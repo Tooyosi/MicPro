@@ -13,7 +13,7 @@ var Slider = require("../models/slider.js");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
-require('dotenv').config();
+// require('dotenv').config();
 
 // Index route
 router.get("/", function(req, res){
