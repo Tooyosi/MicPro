@@ -5,8 +5,8 @@
     <% users.forEach(function(user){%>
         <div class="well well-lg">
             <img src="<%= user.displayPic.image%>" class="staff-image"  alt="">
+            <br/>
             <h3 class="staff-header"><%= user.firstname%> <%= user.lastname%> <span class="staff-span">Level <%= user.level%></span></h3>
-            <h4></h4>
             <div>
                 <a href="/user/<%=user._id%>" class="btn btn-sm btn-success staff-link">View Profile</a>
             </div>

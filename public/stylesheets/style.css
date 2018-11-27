@@ -30,7 +30,7 @@ body{
 
 .slide-body{
     /* background-color: #000;     */
-    height: 97vh;
+    height: 110vh;
 }
 .slideshow{
     position: relative;
@@ -98,7 +98,7 @@ body{
 }
 
 #slide-header{
-    margin-top: 59vh;
+    margin-top: 79vh;
     color: white;
     position: relative; 
     text-align: center;
@@ -117,16 +117,20 @@ body{
 
 .staff-span{
     display: block;
-    margin-left: 175px;
-    margin-top: -63px;
+    margin-left: 300px;
+    margin-top: -20px;
     font-size: 0.7em;
-    padding-top: 14px;
+    /* padding-top: 14px; */
 }
 
 .staff-image{
     width: 150px; 
     height: 20vh;
     margin-bottom: 20px;
+}
+
+.staff-link{
+    margin: 20px;
 }
 .well{
     background: transparent;
@@ -340,6 +344,79 @@ body{
     .profilePicDiv{
         width: 105.5%;
     }
+    .staff-span{
+        display: block;
+        margin-left: 175px;
+        float: right;
+        margin-top: 13px;
+        font-size: 0.7em;
+        padding-top: 14px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .slide-body{
+        margin-top: -10px;
+        height: 40vh;
+    }
+    #slide-header{
+        margin-top: 23vh;
+        color: white;
+        position: relative; 
+        text-align: center;
+        z-index: 1;
+    }
+}
+@media screen and (width: 700px) {
+    .slide-body{
+        margin-top: -10px;
+        height: 40vh;
+    }
+    #slide-header{
+        margin-top: 23vh;
+        color: white;
+        position: relative; 
+        text-align: center;
+        z-index: 1;
+    }
+}
+@media screen and (width: 800px) {
+    .slide-body{
+        margin-top: -10px;
+        height: 40vh;
+    }
+    #slide-header{
+        margin-top: 27vh;
+        color: white;
+        position: relative; 
+        text-align: center;
+        z-index: 1;
+    }
+}
+@media screen and (width: 1024px) {
+    .slide-body{
+        margin-top: -10px;
+        height: 40vh;
+    }
+    #slide-header{
+        margin-top: 27vh;
+        color: white;
+        position: relative; 
+        text-align: center;
+        z-index: 1;
+    }
+}
+@media screen and (width: 768px) {
+    .slide-body{
+        margin-top: -10px;
+        height: 40vh;
+    }
+    #slide-header{
+        margin-top: 28vh;
+        color: white;
+        position: relative; 
+        text-align: center;
+        z-index: 1;
+    }
 }
 @media screen and (width:320px) {
     .profilePicDiv{
@@ -358,6 +435,17 @@ body{
     .profilePicDiv{
         height: 40vh;
         width: 105%;
+    }
+    .slide-body{
+        margin-top: -10px;
+        height: 80vh;
+    }
+    #slide-header{
+        margin-top: 53vh;
+        color: white;
+        position: relative; 
+        text-align: center;
+        z-index: 1;
     }
 }
 
