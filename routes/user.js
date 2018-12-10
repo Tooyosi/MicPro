@@ -37,15 +37,21 @@ router.put("/user/:id", [multipartMiddleware, middleware.userFunctions] ,functio
             var update = {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
-                age: req.body.age,
                 displayPic:{
-                    // Store the URL in a DB for future use
                     image: result.url,
                     image_id: result.public_id
                 },
-                phone: req.body.phone,
+                age: req.body.age,
                 gender: req.body.gender,
+                state: req.body.state,
+                lga: req.body.lga,
+                phone: req.body.phone,
                 level: req.body.level,
+                address: req.body.address,
+                department: req.body.dept,
+                step: req.body.step,
+                hire_date: req.body.hire_date,
+                marital_status: req.body.marital_status
             };
             // Persist by saving
             User.findByIdAndUpdate(req.params.id, update, function(err, updatedUser){

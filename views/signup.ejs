@@ -19,7 +19,7 @@
               <span id="lastError" class="validationError"></span>
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-6">
-            <label class="control-label" for="Username">Username:</label>
+            <label class="control-label" for="Username">Employee Id:</label>
               <input type="text" class="form-control" id="username" placeholder="Enter Your Username" name="username" required>
               <span id="userError" class="validationError"></span>
           </div>
@@ -53,20 +53,51 @@
         </select>
         </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-6">
-            <label class="control-label" for="age">Age:</label>
-              <input type="number" class="form-control" id="age" step="1" min="1" placeholder="Enter Your Age" name="age" required>
+            <label class="control-label" for="age">Date of Birth:</label>
+              <input type="date" class="form-control" id="age" step="1" min="1" placeholder="Enter Your Age" name="age" required>
               <span id="ageError" class="validationError"></span>
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-6">
-            <label class="control-label" for="level">Level:</label>
-              <input type="number" class="form-control" id="level" step="1" min="1" placeholder="Enter Your Level" name="level" required>
+            <label class="control-label" for="age">Date Hired:</label>
+              <input type="date" class="form-control" id="hire_date" step="1" min="1" placeholder="Enter Your Age" name="hire_date" required>
+              <span id="ageError" class="validationError"></span>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="age">Marital Status :</label>
+            <select name="marital_status" id="" class="form-control" required>
+              <option selected disabled>Select your Marital Status</option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Divorced">Divorced</option>
+              <option value="Seperated">Seperated</option>
+              <option value="Widowed">Widowed</option>
+            </select>  
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="level">Grade:</label>
+              <input type="number" class="form-control" id="level" step="1" min="1" placeholder="Enter Your Grade Level" name="level" required>
               <span id="levelError" class="validationError"></span>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="level">Step:</label>
+              <input type="number" class="form-control" id="step" step="1" min="1" placeholder="Enter Your Step" name="step" required>
+              <span id="stepError" class="validationError"></span>
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+            <label class="control-label" for="Firstname">Department:</label>
+              <input type="text" class="form-control" id="dept" placeholder="Enter Your Department" name="dept" required>
+              <span id="deptError" class="validationError"></span>
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-6">
             <label class="control-label" for="email">Email:</label>
               <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
               <span id="emailError" class="validationError"></span>
           </div>
+          <div class="form-group col-lg-10 col-md-10 col-sm-10">
+            <label for="address">Address:</label>
+            <textarea class="form-control" rows="5" id="address" name="address" required></textarea>
+              <span id="addressError" class="validationError"></span>
+            </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-6">
             <label class="control-label" for="pwd">Password:</label>
               <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>

@@ -58,7 +58,24 @@ submit.addEventListener("click", (e)=>{
             levelError.innerHTML = "*** Level is Required";
             e.preventDefault();
     }
-
+    // Department validation
+    var department = document.getElementById("dept");
+    var deptVal = department.value;
+    if(deptVal.trim() == ''){
+    var deptError = document.getElementById("deptError");
+    deptError.innerHTML = "*** Dept is required";
+         e.preventDefault();
+    }
+    
+    //Address validation
+    var address = document.getElementById("address");
+    var addressVal = address.value;
+    if(addressVal.trim() == ''){
+    var addressError = document.getElementById("addressError");
+    addressError.innerHTML = "*** Address is required";
+         e.preventDefault();
+    }
+    
     // email input validation
     var email = document.getElementById("email");
     var emailVal = email.value;

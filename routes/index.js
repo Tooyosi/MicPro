@@ -69,7 +69,12 @@ router.post("/register", multipartMiddleware ,function(req, res){
         lga: req.body.lga,
         phone: req.body.phone,
         level: req.body.level,
-        email: req.body.email
+        email: req.body.email,
+        address: req.body.address,
+        department: req.body.dept,
+        step: req.body.step,
+        hire_date: req.body.hire_date,
+        marital_status: req.body.marital_status,
          })
          if(req.body.adminCode === "MiCAdM1N"){
              newUser.isAdmin = true;

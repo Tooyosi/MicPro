@@ -17,7 +17,7 @@
                         <td><%= user.gender%></td>
                     </tr>
                     <tr>
-                        <td>Age: </td>
+                        <td>Date of Birth: </td>
                         <td><%= user.age%> yrs</td>
                     </tr>
                     <tr>
@@ -37,6 +37,33 @@
                         <td><%= user.email%></td>
                     </tr>
                     <tr>
+                        <td>Home Address: </td>
+                        <td><%= user.address%></td>
+                    </tr>
+                    <tr>
+                        <td>Phone No: </td>
+                        <td><%= user.phone%></td>
+                    </tr>
+                    <tr>
+                        <td>Department: </td>
+                        <td><%= user.department%></td>
+                    </tr>
+                    <tr>
+                        <td>Date of First Appointment: </td>
+                        <td><%= user.hire_date%></td>
+                    </tr>
+                    <tr>
+                        <td>Marital Status: </td>
+                        <td><%= user.marital_status%></td>
+                    </tr>
+                    <tr>
+                        <td>Grade Level: </td>
+                        <td><%= user.level%></td>
+                    </tr>
+                    <tr>
+                        <td>Step: </td>
+                        <td><%= user.step%></td>
+                    </tr>
                 </table>
                 <div class="text-center">
                     <a class="btn btn-success btn-sm btn-edit" href="/user/<%= user._id%>/edit">Edit profile</a>                                    

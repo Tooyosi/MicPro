@@ -14,6 +14,11 @@ var UserSchema = new mongoose.Schema({
     gender: String,
     level: String,
     email: {type: String, unique: true, required: true},
+    address: String,
+    department: String,
+    step: String,
+    hire_date: String,
+    marital_status: String,
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     isAdmin: {
